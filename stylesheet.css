@@ -1,0 +1,264 @@
+header {
+    background-color: #0056b3;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+    line-height: 1.6;
+    text-align: center;
+}
+header h1 {
+    margin: 0;
+    padding: 10px 0;
+}
+form {
+    background: white;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+input[type="text"], input[type="email"], select, textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.actions {
+    text-align: center;
+}
+.actions button {
+    background-color: #0078d4;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: background 0.2s;
+}
+.actions button:hover {
+    background-color: #005fa3;
+}
+/* Navigation styles */
+nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #0056b3;
+    padding-bottom: 10px;
+    margin: 20px 0;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 0;
+}
+nav li {
+    display: inline;
+    margin-right: 15px;
+}
+nav button {
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    transition: background 0.2s;
+}
+nav button a {
+    text-decoration: none;
+    color: white;
+}
+nav button:hover {
+    background-color: #0056b3;
+}
+nav .active button {
+    background-color: #28a745;
+    color: white;
+}
+nav .active button a {
+    color: white;
+}
+/* Main content container */
+main {
+    max-width: 800px;
+    width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+/* Form styles - unified from homePage.css */
+.form, form {
+    max-width: 420px;
+    margin: 32px auto;
+    padding: 32px 36px;
+    background: #f9f9f9;
+    border-radius: 14px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+    text-align: left;
+}
+.form .form-row, .form-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 18px;
+    gap: 16px;
+}
+.form label, label {
+    flex: 0 0 140px;
+    font-weight: 500;
+    color: #2d3a4a;
+    display: block;
+    margin-bottom: 8px;
+}
+.form input[type="text"], .form input[type="email"], input[type="text"], input[type="email"], select, textarea {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    width: 100%;
+    margin-bottom: 10px;
+}
+.form-row textarea {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    resize: vertical;
+    min-width: 220px;
+    min-height: 80px;
+    box-sizing: border-box;
+}
+.form-section-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 28px 0 16px 0;
+    color: #0078d4;
+    letter-spacing: 0.5px;
+}
+.form-row-group {
+    display: flex;
+    gap: 18px;
+    margin-bottom: 18px;
+}
+.actions {
+    text-align: center;
+}
+.actions button, .submit-btn {
+    background: #0078d4;
+    color: white;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: background 0.2s;
+}
+.actions button:hover, .submit-btn:hover {
+    background: #005fa3;
+}
+/* Speaker form specific styles */
+.speaker-form {
+    max-width: 420px;
+    margin: 32px auto;
+    padding: 24px 32px;
+    background: #f9f9f9;
+    border-radius: 12px;
+}
+.speaker-form .form-row {
+    margin-bottom: 10px;
+}
+.speaker-form .form-row-group {
+    margin-bottom: 18px;
+}
+/* Table styles for lists */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+/* Section styles */
+section {
+    margin: 20px 0;
+}
+/* Footer styles */
+footer {
+    background-color: #f8f9fa;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    margin-top: auto;
+}
+/* Responsive design */
+@media (max-width: 768px) {
+    main {
+        width: 95%;
+        margin: 10px auto;
+        padding: 15px;
+    }
+    
+    .form, form {
+        max-width: 100%;
+        margin: 10px 0;
+        padding: 20px;
+    }
+    
+    nav button {
+        padding: 8px 12px;
+        font-size: 12px;
+    }
+    
+    .form-row-group {
+        flex-direction: column;
+        gap: 8px;
+    }
+}
+
+@media (max-width: 600px) {
+    .form-row-group {
+        flex-direction: column;
+        gap: 8px;
+    }
+}

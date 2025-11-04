@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+        <title>Speaker form</title>
+        <link rel="stylesheet" href="stylesheet.css">
+        
+    </head>
+    <body>
+        <header>
+            <h1>Speaker</h1>
+              <ul>
+              <button><a href="sessionform.html">Session</a></button>
+              <button><a href="time.html">Time</a></button>
+              <button><a href="room.html">Room</a></button>
+            </ul>
+        </header>
+        <main>
+        <form action="speaker-info">
+            <label for="speakername">Speaker Name:</label>
+            <select name="speakername" id="speakername">
+                <option value="john doe">John Doe</option>
+                <option value="jane smith">Jane Smith</option>
+                <option value="alice johnson">Alice Johnson</option>
+                <option value="bob brown">Bob Brown</option>
+            </select>
+            <br><br>
+            <label for="contact">Contact:</label>
+            <input type="text" id="contact" name="contact" placeholder="Email or Phone">
+            <br><br>
+            <label for="dayofcontact">Day of Contact:</label>
+            <input type="text" id="dayofcontact" name="dayofcontact" placeholder="e.g. Monday">
+            <br><br>
+            <button type="submit">Submit</button>
+            <button type="button" onclick="editspeaker()">Edit</button>
+        </form>
+        </main>
+    </body>
+</html>
