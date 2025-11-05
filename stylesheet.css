@@ -125,11 +125,12 @@ main {
     background: #f9f9f9;
     border-radius: 14px;
     box-shadow: 0 2px 12px rgba(0,0,0,0.10);
-    text-align: left;
+    text-align: center;
 }
 .form .form-row, .form-row {
     display: flex;
     align-items: center;
+    justify-content: center;
     margin-bottom: 18px;
     gap: 16px;
 }

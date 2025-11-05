@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Room Information</title>
+    <title>Room Form</title>
     <link rel="stylesheet" href="stylesheet.css">
     <ul>
               <button><a href="sessionform.html">Session</a></button>
@@ -11,7 +11,7 @@
             </ul>    
 </head>
 <body>
-    <h1 style="text-align:center;">Room Information</h1>
+    <h1 style="text-align:center;">Room Form</h1>
 
     <form action="room" method="POST" class="form">
         <div class="form-row">
@@ -29,7 +29,7 @@
 
         <div class="form-row">
             <label for="capacity">Capacity:</label>
-            <input type="number" id="capacity" name="capacity" required min="0" placeholder="e.g. 30">
+            <input type="int" id="capacity" name="capacity" required min="0" placeholder="e.g. 30">
         </div>
 
         <div class="actions">
@@ -40,7 +40,7 @@
                 document.querySelector('form').addEventListener('submit', function(event) {
                     event.preventDefault(); // prevent default form submission
                     // Here you would typically handle the form submission, e.g., via AJAX
-                    alert('Room information submitted successfully!');
+                    alert('Room Form submitted successfully!');
                     window.location.href = 'HomePage.html'; // redirect to homepage
                 });
             </script>
@@ -113,10 +113,10 @@
             const capacity = document.getElementById('capacity').value;
             if (roomName && capacity) {
                 // Here you would typically handle the form submission, e.g., via AJAX
-                alert(`Room: ${roomName}\nCapacity: ${capacity}\n\nRoom information submitted successfully!`);
+                alert(`Room: ${roomName}\nCapacity: ${capacity}\n\nRoom Form submitted successfully!`);
                 window.location.href = 'HomePage.html'; // redirect to homepage
             } else {
-                alert('Please fill in all required fields.');
+                alert('Please fill out the room name!');
             }
         });
 
