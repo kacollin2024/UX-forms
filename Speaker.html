@@ -9,29 +9,40 @@
         <header>
             <h1>Speaker</h1>
               <ul>
-              <button><a href="sessionform.html">Session</a></button>
-              <button><a href="time.html">Time</a></button>
+              <button>Session</a></button>
+              <!-- a href="sessionform.html" -->
+              <button><a href="time2.html">Time</a></button>
               <button><a href="room.html">Room</a></button>
             </ul>
         </header>
         <main>
         <form action="speaker-info">
             <label for="speakername">Speaker Name:</label>
-            <select name="speakername" id="speakername">
+            <select name="speakername" id="speakername" required>
                 <option value="john doe">John Doe</option>
                 <option value="jane smith">Jane Smith</option>
                 <option value="alice johnson">Alice Johnson</option>
                 <option value="bob brown">Bob Brown</option>
             </select>
             <br><br>
-            <label for="contact">Contact:</label>
-            <input type="text" id="contact" name="contact" placeholder="Email or Phone">
-            <br><br>
-            <label for="dayofcontact">Day of Contact:</label>
-            <input type="text" id="dayofcontact" name="dayofcontact" placeholder="e.g. Monday">
+
+            <label for="contact">Contact Information:</label>
+            <label> Email:</label>
+            <div class="email selection">
+            <input type="email" class="email-part" id="contact" name="contact" placeholder="Email"> 
+              @ <input type="text" class="email-part" id="domain" placeholder="yahoo, gmail, aol"> 
+               .  <input type="text" class="email-part" id=:emailEnding placeholder=".com, .net">
+
+ <label> Phone Number:</label>      
+   <input type="tel" id="contact" name="phone number" placeholder="Phone Number"> 
+
+   <label for="contact">Day of Phone Number:</label>
+            <input type="tel" id="dayofcontact" name="dayofcontact" placeholder="Phone Number">
             <br><br>
             <button type="submit">Submit</button>
             <button type="button" onclick="editspeaker()">Edit</button>
+
+
         </form>
         </main>
     </body>

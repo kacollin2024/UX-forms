@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head> 
+        <title>Time Form</title>
+        <link rel="stylesheet" href="stylesheet.css">
+        
+    </head>
+    <body>
+        <header>
+            <h1>Time</h1>
+              <ul>
+              <button>Session</a></button>
+              <!-- a href="sessionform.html" -->
+              <button><a href="Speaker.html">Speaker</a></button>
+              <button><a href="room.html">Room</a></button>
+            </ul>
+        </header>
+        <main>
+            <label for="time2">Beginning Time:</label>
+        <div class="time-row">
+            <input class="number" min="1" max="12" placeholder="Hour" required>
+            <input class="number" min="0" max="59" placeholder="Minute" required>
+            <select required>
+        <option value="">select an option </option>
+        <option>AM</option>
+        <option>PM</option>
+      </select>
+      </div>
+
+          <label for="time2">End Time:</label>
+        <div class="time-row">
+            <input class="number" min="1" max="12" placeholder="Hour" required>
+            <input class="number" min="0" max="59" placeholder="Minute" required>
+            <select required>
+        <option value="">select an option </option>
+        <option>AM</option>
+        <option>PM</option>
+      </select>
+      </div>
+  
+          <label for="time2">Total Duration:</label>
+        <div class="time-row">
+            <input class="number" min="1" max="12" placeholder="Hour" required>
+            <input class="number" min="0" max="59" placeholder="Minute" required>
+            <select required>
+        <option value="">select an option </option>
+        <option>AM</option>
+        <option>PM</option>
+      </select>
+      </div>
+
+      <div class="actions">
+            <button type="submit">Submit</button>
+            <button type="button" onclick="editTime()">Edit</button>
+            <script>
+                // will have it redeirect to homepage after submission
+                document.querySelector('form').addEventListener('submit', function(event) {
+                    event.preventDefault(); // prevent default form submission
+                    // Here you would typically handle the form submission, e.g., via AJAX
+                    alert('Time Form submitted successfully!');
+                    window.location.href = 'HomePage.html'; // redirect to homepage
+                });
+            </script>
+        </div>
+    </form>
+
+        </form>
+        </main>
+    </body>
+</html>
