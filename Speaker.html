@@ -26,19 +26,52 @@
             </select>
             <br><br>
 
-            <label for="contact">Contact Information:</label>
-            <label> Email:</label>
-            <div class="email selection">
-            <input type="email" class="email-part" id="contact" name="contact" placeholder="Email"> 
-              @ <input type="text" class="email-part" id="domain" placeholder="yahoo, gmail, aol"> 
-               .  <input type="text" class="email-part" id=:emailEnding placeholder=".com, .net">
-
- <label> Phone Number:</label>      
-   <input type="tel" id="contact" name="phone number" placeholder="Phone Number"> 
-
-   <label for="contact">Day of Phone Number:</label>
-            <input type="tel" id="dayofcontact" name="dayofcontact" placeholder="Phone Number">
+            <label for="contactMethod">Contact Method:</label>
+            <select name="contactMethod" id="contactMethod" required onchange="toggleContactFields()">
+                <option value="">-- Select Contact Method --</option>
+                <option value="email">Email</option>
+                <option value="phone">Phone Number</option>
+                <option value="both">Both</option>
+            </select>
             <br><br>
+
+            <div id="emailField" style="display: none;">
+                <label for="contact">Email:</label>
+                <input type="email" id="contact" name="contact" placeholder="Email" oninput="validateEmailField(this, 'emailError')"> 
+                <span id="emailError" style="color: red; font-size: 0.9rem;"></span>
+                <br><br>
+            </div>
+
+            <div id="phoneField" style="display: none;">
+                <label for="phone">Phone Number:</label>      
+                <input type="tel" id="phone" name="phone" placeholder="Phone Number" oninput="validatePhoneField(this, 'phoneError')"> 
+                <span id="phoneError" style="color: red; font-size: 0.9rem;"></span>
+                <br><br>
+            </div>
+
+            <label for="dayofContactMethod">Day of Contact Method:</label>
+            <select name="dayofContactMethod" id="dayofContactMethod" required onchange="toggleDayOfContactField()">
+                <option value="">-- Select Contact Method --</option>
+                <option value="email">Email</option>
+                <option value="phone">Phone Number</option>
+                <option value="both">Both</option>
+            </select>
+            <br><br>
+
+            <div id="dayOfEmailField" style="display: none;">
+                <label for="dayofemail">Day of Email:</label>
+                <input type="email" id="dayofemail" name="dayofemail" placeholder="Email" oninput="validateEmailField(this, 'dayEmailError')"> 
+                <span id="dayEmailError" style="color: red; font-size: 0.9rem;"></span>
+                <br><br>
+            </div>
+
+            <div id="dayOfPhoneField" style="display: none;">
+                <label for="dayofcontact">Day of Phone Number:</label>
+                <input type="tel" id="dayofcontact" name="dayofcontact" placeholder="Phone Number" oninput="validatePhoneField(this, 'dayPhoneError')">
+                <span id="dayPhoneError" style="color: red; font-size: 0.9rem;"></span>
+                <br><br>
+            </div>
+
             <button type="submit">Submit</button>
             <button type="button" onclick="editspeaker()">Edit</button>
 
@@ -47,3 +80,89 @@
         </main>
     </body>
 </html>
+<script>
+    // Toggle contact fields based on selection
+    function toggleContactFields() {
+        const contactMethod = document.getElementById('contactMethod').value;
+        const emailField = document.getElementById('emailField');
+        const phoneField = document.getElementById('phoneField');
+
+        // Hide all fields initially
+        emailField.style.display = 'none';
+        phoneField.style.display = 'none';
+
+        // Show fields based on selection
+        if (contactMethod === 'email') {
+            emailField.style.display = 'block';
+        } else if (contactMethod === 'phone') {
+            phoneField.style.display = 'block';
+        } else if (contactMethod === 'both') {
+            emailField.style.display = 'block';
+            phoneField.style.display = 'block';
+        }
+    }
+
+    // Toggle day of contact fields based on selection
+    function toggleDayOfContactField() {
+        const dayofContactMethod = document.getElementById('dayofContactMethod').value;
+        const dayOfEmailField = document.getElementById('dayOfEmailField');
+        const dayOfPhoneField = document.getElementById('dayOfPhoneField');
+
+        // Hide all fields initially
+        dayOfEmailField.style.display = 'none';
+        dayOfPhoneField.style.display = 'none';
+
+        // Show fields based on selection
+        if (dayofContactMethod === 'email') {
+            dayOfEmailField.style.display = 'block';
+        } else if (dayofContactMethod === 'phone') {
+            dayOfPhoneField.style.display = 'block';
+        } else if (dayofContactMethod === 'both') {
+            dayOfEmailField.style.display = 'block';
+            dayOfPhoneField.style.display = 'block';
+        }
+    }
+
+    // Automatic email validation
+    function validateEmailField(input, errorId) {
+        const email = input.value;
+        const errorSpan = document.getElementById(errorId);
+        
+        if (email === '') {
+            errorSpan.textContent = '';
+        } else if (!email.includes('@')) {
+            errorSpan.textContent = '⚠ Please enter a valid email address with @';
+        } else if (!email.includes('.')) {
+            errorSpan.textContent = '⚠ Email must include a domain (e.g., @example.com)';
+        } else {
+            errorSpan.textContent = '✓ Valid email';
+            errorSpan.style.color = 'green';
+            setTimeout(() => {
+                errorSpan.textContent = '';
+            }, 2000);
+        }
+    }
+
+    // Automatic phone number validation
+    function validatePhoneField(input, errorId) {
+        const phone = input.value;
+        const errorSpan = document.getElementById(errorId);
+        const phoneDigits = phone.replace(/\D/g, ''); // Remove non-digits
+        
+        if (phone === '') {
+            errorSpan.textContent = '';
+        } else if (phoneDigits.length < 10) {
+            errorSpan.textContent = '⚠ Phone number must be at least 10 digits';
+            errorSpan.style.color = 'red';
+        } else if (phoneDigits.length > 11) {
+            errorSpan.textContent = '⚠ Phone number is too long';
+            errorSpan.style.color = 'red';
+        } else {
+            errorSpan.textContent = '✓ Valid phone number';
+            errorSpan.style.color = 'green';
+            setTimeout(() => {
+                errorSpan.textContent = '';
+            }, 2000);
+        }
+    }
+</script>
