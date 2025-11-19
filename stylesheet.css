@@ -97,6 +97,24 @@ nav button {
     font-size: 18px;
     transition: background 0.2s;
 }
+
+/* make all buttons bigger*/
+button, input[type="button"], input[type="submit"] {
+    font-size: 1.125rem;
+    padding: 12px 20px;
+    min-width: 120px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+}
+
+@media (max-width: 480px) {
+    button, input[type="button"], input[type="submit"] {
+        font-size: 1rem;
+        padding: 10px 14px;
+        min-width: 96px;
+    }
+}
 nav button a {
     text-decoration: none;
     color: white;
@@ -267,5 +285,30 @@ footer {
     .form-row-group {
         flex-direction: column;
         gap: 8px;
+    }
+}
+
+/* Two-up helper: so first and last name are side by side */
+.two-up {
+    display: flex;
+    justify-content: space-between; /* push items to each side */
+    gap: 12px;
+    align-items: center;
+}
+.two-up input,
+.two-up select,
+.two-up textarea {
+    flex: 0 0 48%;
+    width: 48%;
+}
+
+@media (max-width: 600px) {
+    .two-up {
+        flex-direction: column;
+        gap: 8px;
+    }
+    .two-up input, .two-up select, .two-up textarea {
+        width: 100%;
+        flex: 1 1 auto;
     }
 }

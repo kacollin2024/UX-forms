@@ -4,17 +4,17 @@
     <meta charset="utf-8" />
     <title>Room Form</title>
     <link rel="stylesheet" href="stylesheet.css">
-    <ul>
-              <button><a>Session</a></button>
-              <!-- href="sessionform.html -->
-              <li><button><a href="time2.html">Speaker</a></button></li>
-              <!-- href="time.html" -->
-              <li><button><a href="Speaker.html">Speaker</a></button></li>
-        
-            </ul>    
+    
 </head>
 <body>
-    <h1 style="text-align:center;">Room Form</h1>
+    <header>
+        <h1>Room Form</h1>
+        <ul>
+            <button><a href="sessionform.html">Session</a></button>
+            <button><a href="time2.html">Time</a></button>
+            <button><a href="Speaker.html">Speaker</a></button>
+        </ul>
+    </header>
 
     <form action="room" method="POST" class="form">
         <div class="form-row">
@@ -32,7 +32,7 @@
 
         <div class="form-row">
             <label for="capacity">Capacity:</label>
-            <input type="int" id="capacity" name="capacity" required min="0" placeholder="e.g. 30">
+            <input type="number" step=1 id="capacity" name="capacity" required min="0" placeholder="e.g. 30">
         </div>
 
         <div class="actions">

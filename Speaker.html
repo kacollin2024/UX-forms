@@ -18,13 +18,10 @@
         <main>
         <form action="speaker-info">
             <label for="speakername">Speaker Name:</label>
-            <select name="speakername" id="speakername" required>
-                <option value="john doe">John Doe</option>
-                <option value="jane smith">Jane Smith</option>
-                <option value="alice johnson">Alice Johnson</option>
-                <option value="bob brown">Bob Brown</option>
-            </select>
-            <br><br>
+            <div class="two-up">
+                <input type="text" id="firstName" name="firstName" placeholder="First name" required>
+                <input type="text" id="lastName" name="lastName" placeholder="Last name" required>
+            </div>
 
             <label for="contactMethod">Contact Method:</label>
             <select name="contactMethod" id="contactMethod" required onchange="toggleContactFields()">
@@ -41,7 +38,6 @@
                 <span id="emailError" style="color: red; font-size: 0.9rem;"></span>
                 <br><br>
             </div>
-
             <div id="phoneField" style="display: none;">
                 <label for="phone">Phone Number:</label>      
                 <input type="tel" id="phone" name="phone" placeholder="Phone Number" oninput="validatePhoneField(this, 'phoneError')"> 
